@@ -1,0 +1,22 @@
+name: Process Audio
+
+on:
+  push:
+    paths:
+      - 'audio/*.wav'
+
+jobs:
+  process_audio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Install Python dependencies
+        run: pip install requests json
+      
+      - name: Process Audio
+        run: python server/process_audio.py
+        env:
+          DEEPGRAM_API_KEY: ${{ secrets.DEEPGRAM_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
