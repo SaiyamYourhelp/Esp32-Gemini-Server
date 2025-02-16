@@ -3,8 +3,8 @@ import requests
 import json
 
 # API Keys from GitHub Secrets
-DEEPGRAM_API_KEY = os.getenv("5ba46f4a73516222984a543facd3236801016006")
-GEMINI_API_KEY = os.getenv("AIzaSyAybJGr8rkGekB8uexzw2tOjDxJLnFYkZw")
+DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Function to transcribe audio using Deepgram
 def transcribe_audio(file_path):
